@@ -8,7 +8,6 @@ snake[0] = {
     y: 8 * box
 }
 
-
 let direction = "right";
 let food = {
     x: Math.floor(Math.random() * 15 + 1) * box,
@@ -19,7 +18,6 @@ function criarBg(){
     context.fillStyle = "lightgreen";
     context.fillRect(0,0,16*box,16*box);
 }
-
 
 function criarCobrinha(){
     for (i = 0; i < snake.length; i++){
@@ -87,7 +85,9 @@ function iniciarJogo(){
 let jogo = setInterval(iniciarJogo, 100);
 
 
-
+function play() {
+    window.open("play.html");
+}
 
 
 

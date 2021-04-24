@@ -2,36 +2,31 @@
 
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Snake Game</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="assets/css/style.css">
 
         <script src="assets/js/script.js" defer></script>
     </head>
     <body>
-
         <div class="main-game">
             <div class="left">
-                <div class="text-into box">
+                <div class="text-box border">
                     Faça com que a cobra coma a maior quantidade de maçãs que puder. 
                     O jogo está em nível médio, mas você pode ajustar o grau de dificuldade
                     a qualquer momento.
                 </div>
             </div>
 
-            <div class="center box">
+            <div class="center border">
                 <canvas id="snake" width="512" height="512"></canvas>
             </div>
 
             <div class="rigth">
-                <div> <p id="score" class="score box">Pontuação: 0</p></div>
-                <input class="btn-level box" type="button" value="Fácil" onclick="easy()"/>
-                <input class="btn-level box" type="button" value="Médio" onclick="medium()"/>
-                <input class="btn-level box" type="button" value="Difícil" onclick="hard()"/>
-                <input class="btn-level box" type="button" value="Monstro" onclick="monster()"/>
+                <div> <p id="score" class="score border">Maçãs: 0</p></div>
+                <input class="btn btn-level border" type="button" value="Benção" onclick="easy()"/>
+                <input class="btn btn-level border" type="button" value="Médio" onclick="medium()"/>
+                <input class="btn btn-level border" type="button" value="Tremendo" onclick="hard()"/>
+                <input class="btn btn-level border" type="button" value="Atribulado" onclick="monster()"/>
             </div>
         </div>
 

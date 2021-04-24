@@ -74,7 +74,7 @@ function iniciarJogo(){
         food.x = Math.floor(Math.random() * 15 + 1) * box;
         food.y = Math.floor(Math.random() * 15 + 1) * box;
         score+1;
-        document.getElementById('score').innerText = "Pontuação: "+score++;
+        document.getElementById('score').innerText = "Maçãs: "+score++;
     }
   
     let newHead = {

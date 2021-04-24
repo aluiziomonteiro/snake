@@ -9,20 +9,44 @@
     height: 100vh;
     background-image: url(../../assets/img/adan.jpg);
     background-size: cover;
-    
+}
+.text {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+    width: 37%;
+    height: 100%;
 }
 
-.button {
-    padding: 1% 10%;
+.text-into {
+    margin-left: 16%;
+    margin-bottom: 16%;
+    position: relative;
+    padding: 24px;
+    border-radius: 20px;
+    background-color: rgb(255 255 255);
+    border-style: solid;
+}
+
+.btn-play {
+    padding: 14% 176%;
     font-size: x-large;
     color: #080808;
-    box-shadow: 0 0 0 10px hsl(0deg 20% 99% / 13%);
-    background-color: #faf8ef;
+    background-color: white;
     border-radius: 20px;
     border-color: #1b1a1a;
+    cursor: pointer;
+}
+
+.btn-level {
+    width: 184px;
+    margin-top: 20px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: x-large;
+    color: #000000c9;
+    background-color: #ffffffba;
+    border-radius: 20px;
+    border-color: #cacaca;
     cursor: pointer;
 }
 
@@ -40,11 +64,26 @@
 }
 
 .rigth {
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
     width: -webkit-fill-available;
 }
 
+.score {
+    padding: 20px;
+    color: #c11212;
+    margin-bottom: 53px;
+    background-color: #ffffff;
+    font-size: 40px;
+}
+
 div {
-    height: 100%;
     display: flex;
     align-items: center;
 }
+
+.box {
+    box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.6);
+}
+

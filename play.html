@@ -14,13 +14,25 @@
     <body>
 
         <div class="main-game">
-            <div class="left">A</div>
+            <div class="left">
+                <div class="text-into box">
+                    Faça com que a cobra coma a maior quantidade de maçãs que puder. 
+                    O jogo está em nível médio, mas você pode ajustar o grau de dificuldade
+                    a qualquer momento.
+                </div>
+            </div>
 
-            <div class="center">
+            <div class="center box">
                 <canvas id="snake" width="512" height="512"></canvas>
             </div>
 
-            <div class="rigth">C</div>
+            <div class="rigth">
+                <div> <p id="score" class="score box">Pontuação: 0</p></div>
+                <input class="btn-level box" type="button" value="Fácil" onclick="easy()"/>
+                <input class="btn-level box" type="button" value="Médio" onclick="medium()"/>
+                <input class="btn-level box" type="button" value="Difícil" onclick="hard()"/>
+                <input class="btn-level box" type="button" value="Monstro" onclick="monster()"/>
+            </div>
         </div>
 
     </body>

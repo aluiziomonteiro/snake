@@ -2,6 +2,8 @@ let canvas = document.getElementById("snake");
 let context = canvas.getContext("2d");
 let box = 32;
 let snake = [];
+let score = 1;
+
 
 snake[0] = {
     x: 8 * box,
@@ -71,8 +73,9 @@ function iniciarJogo(){
     }else{
         food.x = Math.floor(Math.random() * 15 + 1) * box;
         food.y = Math.floor(Math.random() * 15 + 1) * box;
+        score+1;
+        document.getElementById('score').innerText = "Pontuação: "+score++;
     }
-
   
     let newHead = {
         x: snakeX,
@@ -82,38 +85,28 @@ function iniciarJogo(){
     snake.unshift(newHead);
 }
 
-let jogo = setInterval(iniciarJogo, 100);
-
-
 function play() {
     window.open("play.html");
 }
 
+var jogo = setInterval(iniciarJogo, 100);
 
+function easy() {
+    clearInterval(jogo);
+    jogo = setInterval(iniciarJogo, 200);
+}
 
+function medium() {
+    clearInterval(jogo);
+    jogo = setInterval(iniciarJogo, 100);
+}
 
+function hard() {
+    clearInterval(jogo);
+    jogo = setInterval(iniciarJogo, 10);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function monster() {
+    clearInterval(jogo);
+    jogo = setInterval(iniciarJogo, -100000);
+}

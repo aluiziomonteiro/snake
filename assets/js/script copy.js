@@ -3,7 +3,7 @@ let context = canvas.getContext("2d");
 let box = 32;
 let snake = [];
 let score = 1;
-
+let apple;
 
 snake[0] = {
     x: 8 * box,
@@ -23,14 +23,19 @@ function criarBg(){
 
 function criarCobrinha(){
     for (i = 0; i < snake.length; i++){
-        context.fillStyle = "green";
+        context.fillStyle = "darkgreen";
         context.fillRect(snake[i].x, snake[i].y, box, box)
     }
 }
 
 function drawFood(){
-    context.fillStyle = "red";
-    context.fillRect(food.x, food.y, box, box);
+    if(context){
+        apple = new Image();
+        apple.src = 'assets/img/apple.png';
+        apple.onload = function(){
+            context.drawImage(apple, food.x, food.y, 30, 30);
+        }
+    } 
 }
 
 document.addEventListener('keydown', update);
@@ -67,7 +72,6 @@ function iniciarJogo(){
     if(direction == "up") snakeY -= box;
     if(direction == "down") snakeY += box;
     
-
     if(snakeX != food.x || snakeY != food.y){
         snake.pop();
     }else{

@@ -3,7 +3,10 @@ let context = canvas.getContext("2d");
 let box = 32;
 let snake = [];
 let score = 1;
+
 let apple;
+let crash = new Audio('assets/sound/crash.mp3');
+var crack = new Audio('assets/sound/crack.mp3');
 
 snake[0] = {
     x: 8 * box,
@@ -33,7 +36,7 @@ function drawFood(){
         apple = new Image();
         apple.src = 'assets/img/apple.png';
         apple.onload = function(){
-            context.drawImage(apple, food.x, food.y, 30, 30);
+            context.drawImage(apple, food.x, food.y, 40, 40);
         }
     } 
 }
@@ -57,7 +60,9 @@ function iniciarJogo(){
     for(var i = 1; i < snake.length; i++){
         if(snake[0].x == snake[i].x && snake[0].y == snake[i].y){
             clearInterval(jogo);
-            alert('Game Over!');
+            crash.play();
+
+            window.setTimeout(() => alert('Game Over!'), 1000);
         }
     }
     criarBg();
@@ -77,8 +82,10 @@ function iniciarJogo(){
     }else{
         food.x = Math.floor(Math.random() * 15 + 1) * box;
         food.y = Math.floor(Math.random() * 15 + 1) * box;
+        crack.play();
         score+1;
         document.getElementById('score').innerText = "Maçãs: "+score++;
+        
     }
   
     let newHead = {

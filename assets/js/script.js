@@ -51,7 +51,6 @@ function update (event){
 }
 
 function iniciarJogo(){
-
     if(snake[0].x > 15 * box && direction == "right") snake[0].x = 0;
     if(snake[0].x < 0 && direction == "left") snake[0].x = 15 * box;
     if(snake[0].y > 15 * box && direction == "down") snake[0].y = 0;
@@ -61,10 +60,18 @@ function iniciarJogo(){
         if(snake[0].x == snake[i].x && snake[0].y == snake[i].y){
             clearInterval(jogo);
             crash.play();
-
-            window.setTimeout(() => alert('Game Over!'), 1000);
+            window.setTimeout(() => msnExit(), 1000);
         }
     }
+
+    function msnExit() {
+        if (confirm("Fim de Jogo. Tente outra vez!")) {
+            location.reload();
+        } else{
+            window.location.href = "index.html";
+        }  
+      }
+
     criarBg();
     criarCobrinha();
     drawFood();
@@ -84,8 +91,7 @@ function iniciarJogo(){
         food.y = Math.floor(Math.random() * 15 + 1) * box;
         crack.play();
         score+1;
-        document.getElementById('score').innerText = "Maçãs: "+score++;
-        
+        document.getElementById('score').innerText = "Maçãs: "+score++;    
     }
   
     let newHead = {

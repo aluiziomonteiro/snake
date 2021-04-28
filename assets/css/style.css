@@ -8,16 +8,16 @@
 *******************************************/
 .main-index {
     height: 100vh;
-    background-image: url(../../assets/img/adan.jpg);
+    background-image: url(../../assets/img/adan.png);
     background-size: cover;
 }
 
 .index-left {
     display: flex;
     align-items: flex-end;
-    width: 29%;
+    width: 27%;
     height: 100%;
-    padding-left: 5%;
+    padding-left: 3%;
     padding-bottom: 11%;
 }
 
@@ -28,10 +28,17 @@
     color: #48450a;
     text-align: justify;
 }
+.logo {
+    width: 600px;
+}
 
-/* .index-right {
-
-} */
+ .index-right {
+    display: block;
+    display: flex;
+    flex-direction: column;
+   
+   align-items: center;
+} 
 
 .btn {
     border-radius: 20px;
@@ -41,7 +48,7 @@
 }
 
 .btn-play {
-    padding: 14% 176%;
+    padding: 4% 17%;
     font-weight: 600;
     border-color: #f00202;
     color: rgb(255, 255, 255);
